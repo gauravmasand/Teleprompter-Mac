@@ -47,8 +47,11 @@ function createWindow() {
   });
 
   // Hide from screen capture (Loom, QuickTime, OBS, etc.)
-  // On macOS this sets NSWindowSharingNone.
-  win.setContentProtection(true);
+  // On macOS this sets NSWindowSharingNone. Set TELEPROMPTR_VISIBLE=1
+  // to disable protection — used only for taking screenshots of the app.
+  if (process.env.TELEPROMPTR_VISIBLE !== '1') {
+    win.setContentProtection(true);
+  }
 
   // Float above everything, including fullscreen apps.
   win.setAlwaysOnTop(true, 'screen-saver');

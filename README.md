@@ -4,6 +4,10 @@ A tiny macOS teleprompter that **stays invisible on screen share**. Built for re
 
 ![platform](https://img.shields.io/badge/platform-macOS-black) ![electron](https://img.shields.io/badge/electron-33-47848F)
 
+<p align="center">
+  <img src="docs/Screenshot.png" alt="Telepromptr in action" width="640" />
+</p>
+
 ## Why
 
 Most teleprompter apps show up in your recording because they're normal windows. This one uses macOS's `NSWindowSharingNone` flag (via Electron's `setContentProtection`) so the window is excluded from every screen-capture API on the system. You see it. Your recording doesn't.
