@@ -1,0 +1,44 @@
+{
+  "name": "telepromptr",
+  "version": "1.0.0",
+  "description": "Invisible-on-screenshare teleprompter",
+  "main": "main.js",
+  "author": "Gaurav Masand",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac dmg"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.gauravmasand.telepromptr",
+    "productName": "Telepromptr",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "renderer.js",
+      "package.json"
+    ],
+    "mac": {
+      "target": {
+        "target": "dmg",
+        "arch": [
+          "arm64",
+          "x64"
+        ]
+      },
+      "category": "public.app-category.productivity",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "Telepromptr",
+      "writeUpdateInfo": false
+    }
+  }
+}

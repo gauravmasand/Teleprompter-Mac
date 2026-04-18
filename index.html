@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+    <title>Telepromptr</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell" id="shell">
+      <header class="bar" id="bar">
+        <div class="drag"></div>
+        <div class="controls">
+          <button class="btn play" id="playBtn" title="Play / Pause (Space)">▶</button>
+
+          <label class="group" title="Scroll speed">
+            <span class="lbl">Speed</span>
+            <input type="range" id="speed" min="10" max="300" step="1" value="60" />
+            <span class="val" id="speedVal">60</span>
+          </label>
+
+          <label class="group" title="Font size">
+            <span class="lbl">Size</span>
+            <input type="range" id="fontSize" min="16" max="96" step="1" value="38" />
+            <span class="val" id="fontSizeVal">38</span>
+          </label>
+
+          <label class="group" title="Opacity">
+            <span class="lbl">Opacity</span>
+            <input type="range" id="opacity" min="10" max="100" step="1" value="85" />
+            <span class="val" id="opacityVal">85</span>
+          </label>
+
+          <button class="btn" id="editBtn" title="Edit text (E)">Edit</button>
+          <button class="btn" id="resetBtn" title="Jump to top">Top</button>
+          <button class="btn" id="minBtn" title="Hide window (⌘⇧T to show)">—</button>
+          <button class="btn" id="closeBtn" title="Close">✕</button>
+        </div>
+      </header>
+
+      <main class="stage" id="stage">
+        <div class="scroller" id="scroller">
+          <div class="spacer"></div>
+          <div class="text" id="text" contenteditable="false">Paste or type your script here. Click Edit to modify. Press Space to start scrolling.</div>
+          <div class="spacer"></div>
+        </div>
+        <div class="cue" id="cue"></div>
+      </main>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
